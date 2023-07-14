@@ -5,7 +5,6 @@ import useCart from "@/hooks/use-cart";
 import { useEffect, useMemo, useState } from "react";
 import CartItem from "./components/cart-items";
 import Summary from "./components/Summary";
-import { Product } from "@/types";
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);

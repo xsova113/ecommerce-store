@@ -35,7 +35,7 @@ const useCart = create(
 
         set({ items: newItems });
       },
-      removeAll: () => set({ items: [] }),
+      removeAll: () => set({items: []}),
     }),
     {
       name: "cart-storage",
