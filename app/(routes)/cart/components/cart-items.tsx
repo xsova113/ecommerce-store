@@ -27,7 +27,7 @@ const CartItem = ({ data, qty }: CartItemsProps) => {
           src={data[0]?.images && data[0]?.images[0]?.url}
           alt={"image"}
           fill
-          className="object-cover object-center"
+          className="object-contain object-center"
         />
       </div>
       <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">

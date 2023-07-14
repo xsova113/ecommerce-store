@@ -30,7 +30,7 @@ const Gallery = ({ images }: GalleryProps) => {
               alt="image"
               fill
               priority
-              className="object-cover object-center sm:rounded-lg"
+              className="object-contain object-center sm:rounded-lg"
             />
           </AspectRatio>
         </TabsContent>
