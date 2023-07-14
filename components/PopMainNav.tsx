@@ -1,14 +1,6 @@
 "use client";
 
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { routes } from "@/lib/constants";
 import Link from "next/link";
