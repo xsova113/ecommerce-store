@@ -33,10 +33,10 @@ const MobileFilters = ({ sizes, colors }: MobileFiltersProps) => {
   return (
     <Sheet>
       <SheetTrigger className="lg:hidden">
-        <Button className="flex items-center gap-x-2">
-          Filters
+        <div className="flex items-center gap-x-2">
+          <span>Filters</span>
           <Plus size={17} />
-        </Button>
+        </div>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="text-start">
