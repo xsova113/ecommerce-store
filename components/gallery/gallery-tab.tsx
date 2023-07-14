@@ -17,7 +17,7 @@ const GalleryTab = ({ image }: GalleryTabProps) => {
           src={image.url}
           alt="image"
           fill
-          className="object-cover object-center rounded-sm"
+          className="object-contain object-center rounded-sm"
         />
       </div>
     </TabsTrigger>

@@ -43,14 +43,14 @@ const ProductCard = ({ item }: ProductCardProps) => {
     <Card className="border group dark:bg-slate-900">
       <CardContent className="p-0">
         <div className="relative w-full h-60">
-          <Button onClick={onPreview}>
+          <button onClick={onPreview}>
             <Image
               src={item?.images[0]?.url}
               alt={"image"}
               fill
               className="object-contain object-center rounded-t-lg"
             />
-          </Button>
+          </button>
           <div className="opacity-0 group-hover:opacity-100 absolute right-2 top-2 transition">
             <div className="flex gap-x-2 justify-center">
               <IconButton
