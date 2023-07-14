@@ -13,6 +13,8 @@ const ProductPage = async ({ params }: { params: { productId: string } }) => {
     categoryId: product?.category?.id,
   });
 
+  if (!product) return null;
+
   return (
     <div className="pt-14">
       <Container>

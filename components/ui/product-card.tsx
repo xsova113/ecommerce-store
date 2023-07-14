@@ -28,7 +28,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
   const cart = useCart();
 
   const handleClick = () => {
-    router.push(`/product/${item?.id}`);
+    router.push(`/product/${item.id}`);
   };
 
   const onPreview = () => {

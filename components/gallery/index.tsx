@@ -11,6 +11,7 @@ interface GalleryProps {
 }
 
 const Gallery = ({ images }: GalleryProps) => {
+  if (!images) return <div>No images</div>;
   return (
     <Tabs
       defaultValue={images[0].id}
