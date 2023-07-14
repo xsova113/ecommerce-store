@@ -6,6 +6,7 @@ import { routes } from "@/lib/constants";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useParams, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface MainNavProps {
   data: any;
@@ -15,6 +16,13 @@ const PopMainNav = ({ data }: MainNavProps) => {
   const pathname = usePathname();
   const params = useParams();
   const navRoutes = routes(data, pathname, params.Id);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <Popover>
