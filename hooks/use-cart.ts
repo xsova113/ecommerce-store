@@ -2,7 +2,6 @@ import { create } from "zustand";
 import { Product } from "@/types";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { toast } from "react-hot-toast";
-import { useCurrentUser } from "sanity";
 
 interface CartStore {
   items: Product[];
