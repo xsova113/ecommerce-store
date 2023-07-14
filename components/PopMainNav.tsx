@@ -1,12 +1,18 @@
 "use client";
 
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { routes } from "@/lib/constants";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface MainNavProps {
   data: any;
@@ -25,27 +31,22 @@ const PopMainNav = ({ data }: MainNavProps) => {
   if (!isMounted) return null;
 
   return (
-    <Popover>
-      <PopoverTrigger className="lg:hidden block">
+    <DropdownMenu>
+      <DropdownMenuTrigger>
         <HamburgerMenuIcon className="w-5 h-5" />
-      </PopoverTrigger>
-      <PopoverContent align="start">
-        <div className="flex flex-col items-start gap-1">
-          {navRoutes.map((route) => (
-            <Link
-              key={route.href}
-              href={route.href}
-              className={cn(
-                "text-sm font-medium w-full py-3 hover:bg-gray-200 dark:hover:bg-gray-700 px-2 transition",
-                route.active && "text-neutral bg-gray-200 dark:bg-gray-700 dark:text-gray-100"
-              )}
-            >
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>CATEGORY</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        {navRoutes.map((route) => (
+          <DropdownMenuItem>
+            <Link key={route.href} href={route.href} className={"my-2 mx-6"}>
               {route.label}
             </Link>
-          ))}
-        </div>
-      </PopoverContent>
-    </Popover>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
