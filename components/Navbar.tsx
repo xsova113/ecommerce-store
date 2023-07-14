@@ -16,7 +16,7 @@ const Navbar = async () => {
         <PopMainNav data={categories} />
         <Link href="/" className="btn btn-ghost normal-case font-bold text-xl">
           <p>
-            GEO <span className="font-thin">|</span> STORE
+            FUSION <span className="font-thin">|</span> PRIME
           </p>
         </Link>
       </div>
