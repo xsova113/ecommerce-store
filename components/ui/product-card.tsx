@@ -48,7 +48,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
               src={item?.images[0]?.url}
               alt={"image"}
               fill
-              className="object-cover object-center rounded-t-lg"
+              className="object-contain object-center rounded-t-lg"
             />
           </Button>
           <div className="opacity-0 group-hover:opacity-100 absolute right-2 top-2 transition">
