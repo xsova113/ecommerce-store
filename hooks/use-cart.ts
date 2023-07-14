@@ -7,7 +7,7 @@ interface CartStore {
   items: Product[];
   addItem: (data: Product) => void;
   removeItem: (id: string) => void;
-  removeAll: () => void;
+  removeAll: (id: string) => void;
 }
 
 const useCart = create(
@@ -35,7 +35,10 @@ const useCart = create(
 
         set({ items: newItems });
       },
-      removeAll: () => set({items: []}),
+      removeAll: (id: string) => {
+        const removingItems = get().items.filter((item) => item.id !== id);
+        set({ items: removingItems });
+      },
     }),
     {
       name: "cart-storage",

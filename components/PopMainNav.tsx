@@ -39,7 +39,7 @@ const PopMainNav = ({ data }: MainNavProps) => {
         <DropdownMenuLabel>CATEGORY</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {navRoutes.map((route) => (
-          <DropdownMenuItem>
+          <DropdownMenuItem key={route.href}>
             <Link key={route.href} href={route.href} className={"my-2 mx-6"}>
               {route.label}
             </Link>
