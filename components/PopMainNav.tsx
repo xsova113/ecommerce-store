@@ -3,7 +3,7 @@
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { routes } from "@/lib/constants";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   DropdownMenu,
@@ -21,6 +21,7 @@ interface MainNavProps {
 const PopMainNav = ({ data }: MainNavProps) => {
   const pathname = usePathname();
   const params = useParams();
+  const router = useRouter();
   const navRoutes = routes(data, pathname, params.Id);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -39,10 +40,12 @@ const PopMainNav = ({ data }: MainNavProps) => {
         <DropdownMenuLabel>CATEGORY</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {navRoutes.map((route) => (
-          <DropdownMenuItem key={route.href}>
-            <Link key={route.href} href={route.href} className={"my-2 mx-6"}>
-              {route.label}
-            </Link>
+          <DropdownMenuItem
+            key={route.href}
+            className={"my-2 mx-6"}
+            onClick={() => router.push(route.href)}
+          >
+            {route.label}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
