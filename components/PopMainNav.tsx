@@ -32,7 +32,7 @@ const PopMainNav = ({ data }: MainNavProps) => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="lg:hidden">
         <HamburgerMenuIcon className="w-5 h-5" />
       </DropdownMenuTrigger>
       <DropdownMenuContent>

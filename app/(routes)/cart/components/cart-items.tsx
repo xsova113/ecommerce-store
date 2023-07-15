@@ -33,7 +33,7 @@ const CartItem = ({ data, qty }: CartItemsProps) => {
       <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">
         <div className="absolute z-10 right-0 top-0">
           <IconButton
-            onClick={() => cart.removeAll(data[0].id)}
+            onClick={() => cart.removeAllGroup(data[0].id)}
             icon={<X size={15} color="black" />}
           />
         </div>
