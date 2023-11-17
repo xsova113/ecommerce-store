@@ -17,6 +17,7 @@ import Currency from "./currency";
 import { useRouter } from "next/navigation";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
+import { EventHandler, MouseEventHandler } from "react";
 
 interface ProductCardProps {
   item: Product;
@@ -31,17 +32,22 @@ const ProductCard = ({ item }: ProductCardProps) => {
     router.push(`/product/${item.id}`);
   };
 
-  const onPreview = () => {
+  const onPreview = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     previewModal.onOpen(item);
   };
 
-  const onAddToCart = () => {
+  const onAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     cart.addItem(item);
   };
 
   return (
     <Card className="border group dark:bg-slate-900">
-      <CardContent className="p-0">
+      <CardContent
+        className="p-0 cursor-pointer"
+        onClick={() => router.push(`/product/${item.id}`)}
+      >
         <div className="relative w-full h-60">
           <Image
             src={item?.images[0]?.url}
@@ -65,6 +71,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
           </div>
         </div>
       </CardContent>
+
       <CardHeader className="py-4">
         <CardTitle>{item.name}</CardTitle>
         <CardDescription>{item.category?.name}</CardDescription>
